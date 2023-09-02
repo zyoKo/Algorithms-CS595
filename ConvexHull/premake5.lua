@@ -7,6 +7,11 @@ project "ConvexHull"
     targetdir("./build/bin/" .. outputdir .. "/%{prj.name}")
     objdir("./build/obj/" .. outputdir .. "/%{prj.name}")
 
+    defines
+    {
+        "_CRT_SECURE_NO_WARNINGS"
+    }
+
     files 
     {
         sourcedir .. "/**.cpp",

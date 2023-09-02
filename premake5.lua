@@ -1,4 +1,4 @@
-workspace "Algorithms"
+workspace "ConvexHull"
     architecture "x86_64"
     startproject "ConvexHull"
 
@@ -13,6 +13,22 @@ workspace "Algorithms"
     outputdir = "%{cfg.buildcfg}_%{cfg.system}_%{cfg.architecture}"
 
     include "ConvexHull"
+
+workspace "Algorithm2"
+    architecture "x86_64"
+    startproject "Algorithm2"
+
+    configurations
+    {
+        "Debug",
+        "Release"
+    }
+
+    sourcedir = "./src"
+    vendordir = "./vendor"
+    outputdir = "%{cfg.buildcfg}_%{cfg.system}_%{cfg.architecture}"
+
+    include "Algorithm2"
 
 newaction
 {

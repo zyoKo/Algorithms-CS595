@@ -8,4 +8,4 @@ Contains `Makefile` to test on Linux or teminal with WSL support.
 git clone https://github.com/zyoKo/Algorithms-CS595.git
 ```
 
-Run `generate_files.bat` and open `ProjectName.sln` in Visual Studio 2022.
+Run `scripts\generate_vs_files.bat` and open `ProjectName.sln` in Visual Studio 2022.

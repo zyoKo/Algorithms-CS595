@@ -1,4 +1,4 @@
-workspace "ConvexHull"
+workspace "Algorithms"
     architecture "x86_64"
     startproject "ConvexHull"
 

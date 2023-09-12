@@ -189,7 +189,8 @@ void ExecuteFunctions(const std::vector<std::function<void()>>& functionsToExecu
 	}
 }
 
-int main(int argc, char** argv) try {
+int main(int argc, char** argv) try 
+{
 	/*if (argc > 1) {
 		int test = 0;
 		std::sscanf(argv[1], "%i", &test);
@@ -199,9 +200,14 @@ int main(int argc, char** argv) try {
 	// BruteForce1Tests
 	std::vector<std::function<void()>> hullBruteForceFunctions{ test0, test2, test3, test4, test5, test6, test7 };
 	std::vector<std::function<void()>> hullBruteForce2Functions{ test1, test8, test9, test10, test11, test12, test13 };
+	std::vector<std::function<void()>> executeAll{ test0, test1, test2, test3, test4, test5, test6, test7, test8, test9, test10, test11, test12, test13 };
 
 	//ExecuteFunctions(hullBruteForceFunctions);
-	ExecuteFunctions(hullBruteForce2Functions);
+	//ExecuteFunctions(hullBruteForce2Functions);
+	ExecuteFunctions(executeAll);
+
+	// Individual Tests
+	//test1();
 
 	return 0;
 }

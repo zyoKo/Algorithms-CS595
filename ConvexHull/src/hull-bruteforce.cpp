@@ -42,16 +42,6 @@ std::pair<bool, bool> get_location(
 	return std::make_pair((scal_prod < 0), (scal_prod > 0));
 }
 
-//struct Line
-//{
-//	Point& p1, &p2;
-//
-//	Line(Point& p1, Point& p2)
-//		:	p1(p1), p2(p2)
-//	{
-//	}
-//};
-
 //returns a set of indices of points that form convex hull
 std::set<int> hullBruteForce(std::vector<Point> const& points)
 {
@@ -61,15 +51,11 @@ std::set<int> hullBruteForce(std::vector<Point> const& points)
 
 	std::set<int> hull_indices;
 
-	for (auto i = 0; i < num_points - 1; ++i)	// initial point
+	for (auto i = 0; i < num_points; ++i)	// initial point
 	{
 		for (auto j = i + 1; j < num_points; ++j)	// next point that forms line with initial point
 		{
-			// Create line
-			//Line line(points[i], points[j]);
-
-			int chooseSide; // 0 is left, 1 is right
-			bool firstRun = true, shouldAddPoints = true;
+			int left = 0, right = 0;
 			for (auto k = 0; k < num_points; ++k)	// testing all points other than the selected line indices
 			{
 				if (k == i || k == j)
@@ -77,27 +63,20 @@ std::set<int> hullBruteForce(std::vector<Point> const& points)
 
 				auto checkPointSide = get_location(points[i].x, points[i].y, points[j].x, points[j].y, points[k].x, points[k].y);
 
-				if (!firstRun)
-				{
-					if ((chooseSide == 0 && checkPointSide.second) || (chooseSide == 1 && checkPointSide.first))
-					{
-						shouldAddPoints = false;
-						break;
-					} 
-				}
-				else
-				{
-					chooseSide = checkPointSide.first ? 0 : 1;
-					firstRun = false;
-				}
+				if (checkPointSide.first)
+					++left;
+				
+				if (checkPointSide.second)
+					++right;
+				
+				if (left > 0 && right > 0)
+					break;
 			}
 
-			//if ((pointsOnLeft == 0 && pointsOnRight != 0) || (pointsOnLeft != 0 && pointsOnRight == 0))
-			if (shouldAddPoints)
+			if ((left == 0 && right != 0) || (left != 0 && right == 0))
 			{
 				hull_indices.emplace(i);
 				hull_indices.emplace(j);
-				break;
 			}
 		}
 	}
@@ -130,7 +109,7 @@ std::vector<int> hullBruteForce2(std::vector<Point> const& points)
 
 		for (int i = 0; i < num_points; ++i)
 		{
-			if (get_location(points[firstPoint].x, points[firstPoint].y, points[i].x, points[i].y, points[ccPoint].x, points[ccPoint].y).second)
+			if (get_location(points[firstPoint].x, points[firstPoint].y, points[i].x, points[i].y, points[ccPoint].x, points[ccPoint].y).first)
 			{
 				ccPoint = i;
 			}

@@ -1,4 +1,4 @@
-project "Algorithm2"
+project "JT_Permutations"
     kind "ConsoleApp"
     language "C++"
     cppdialect "C++11"

@@ -1,4 +1,4 @@
-workspace "ConvexHull"
+workspace "Algorithms"
     architecture "x86_64"
     startproject "ConvexHull"
 
@@ -13,22 +13,23 @@ workspace "ConvexHull"
     outputdir = "%{cfg.buildcfg}_%{cfg.system}_%{cfg.architecture}"
 
     include "ConvexHull"
+    include "JT_Permutations"
 
-workspace "Algorithm2"
-    architecture "x86_64"
-    startproject "Algorithm2"
-
-    configurations
-    {
-        "Debug",
-        "Release"
-    }
-
-    sourcedir = "./src"
-    vendordir = "./vendor"
-    outputdir = "%{cfg.buildcfg}_%{cfg.system}_%{cfg.architecture}"
-
-    include "Algorithm2"
+--workspace "Algorithm2"
+--    architecture "x86_64"
+--    startproject "Algorithm2"
+--
+--    configurations
+--    {
+--        "Debug",
+--        "Release"
+--    }
+--
+--    sourcedir = "./src"
+--    vendordir = "./vendor"
+--    outputdir = "%{cfg.buildcfg}_%{cfg.system}_%{cfg.architecture}"
+--
+--    include "Algorithm2"
 
 newaction
 {

@@ -10,5 +10,12 @@ public:
 	bool Next();
 	
 	std::vector<int> const& Get() const;
+
+private:
+	std::vector<int> array;
+
+	std::vector<int> direction;
+
+	int size;
 };
 #endif

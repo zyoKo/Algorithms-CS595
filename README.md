@@ -1,5 +1,8 @@
-# Algorithms-CS595
+# Data Structures and Algorithms
 Algorithms and Data Structures
+  - Convex Hull
+  - Johnson-Trotter Permutations
+  - Lexicographical Permutation
 
 ## Usage
 1. Contains `Makefile` to test on Linux or teminal with WSL support.

@@ -14,6 +14,7 @@ workspace "Algorithms"
 
     include "ConvexHull"
     include "JT_Permutations"
+    include "Lexical_Permutation"
 
 --workspace "Algorithm2"
 --    architecture "x86_64"

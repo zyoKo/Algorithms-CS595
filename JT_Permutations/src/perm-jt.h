@@ -16,6 +16,10 @@ private:
 
 	std::vector<int> direction;
 
-	int size;
+	int largestIndex;
+
+	bool mobileIndexFound;
+
+	int mobileElementIndex;
 };
 #endif

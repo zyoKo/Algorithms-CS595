@@ -1,5 +1,5 @@
 # Data Structures and Algorithms
-Algorithms and Data Structures
+List of Algorithms implemented:
   - Convex Hull
   - Johnson-Trotter Permutations
   - Lexicographical Permutation

@@ -9,6 +9,7 @@ class GreyCode
 {
 private:
 	int size;
+	int currentValue;
 
 public:
 	GreyCode(int s);

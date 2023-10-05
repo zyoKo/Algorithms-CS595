@@ -78,7 +78,7 @@ void test_grey_code( int s )
 }
 
 void test0() {
-    test_grey_code( 3 );
+    test_grey_code( 4 );
 }
 void test1() {
     test_grey_code( 6 );
@@ -105,17 +105,23 @@ void (*pTests[])() = {
     test0,test1,test2,test3,test4,test5,test6
 }; 
 
+int main()
+{
+	test2();
 
-int main(int argc, char ** argv) try {
-    if (argc == 2) {
-		int test = 0;
-		std::sscanf(argv[1],"%i",&test);
-		pTests[ test ]();
-    } else {
-        std::cout <<  "./" << argv[0] << " <test number 0.." << sizeof(pTests)/sizeof(*pTests) << ">\n";
-        return 1;
-    }
-
-} catch( char const* str) {
-    std::cout << str << std::endl;
+    return 0;
 }
+
+//int main(int argc, char ** argv) try {
+//    if (argc == 2) {
+//		int test = 0;
+//		std::sscanf(argv[1],"%i",&test);
+//		pTests[ test ]();
+//    } else {
+//        std::cout <<  "./" << argv[0] << " <test number 0.." << sizeof(pTests)/sizeof(*pTests) << ">\n";
+//        return 1;
+//    }
+//
+//} catch( char const* str) {
+//    std::cout << str << std::endl;
+//}

@@ -2,9 +2,9 @@ Implement iterative brute force solution for knapsack problem
 using minimal change ordering of subsets:
 
 1)  implement Grey code ordering - see class notes.
-    You class GreyCode should have at least 2 methods:
-        - ctor taking integer - the number of elements
-        - Next that returns 3 values. Remember that next subset is different 
+    The class GreyCode should have at least 2 methods:
+        - "constructor" taking integer - the number of elements
+        - "Next Function" that returns 3 values. Remember that next subset is different 
           from previous in one position/element only, so to define the subset
           we may define how it is different from previous:
             boolean: true - if this is the last subset

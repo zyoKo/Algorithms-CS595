@@ -8,6 +8,14 @@ workspace "Algorithms"
         "Release"
     }
 
+    filter "system:windows"
+        systemversion "latest"
+        defines "WINDOWS"
+
+    filter "system:linux"
+        systemversion "latest"
+        defines "LINUX"
+
     sourcedir = "./src"
     vendordir = "./vendor"
     outputdir = "%{cfg.buildcfg}_%{cfg.system}_%{cfg.architecture}"
@@ -16,22 +24,6 @@ workspace "Algorithms"
     include "JT_Permutations"
     include "Lexical_Permutation"
     include "Knapsack_BruteForce_Min_Change"
-
---workspace "Algorithm2"
---    architecture "x86_64"
---    startproject "Algorithm2"
---
---    configurations
---    {
---        "Debug",
---        "Release"
---    }
---
---    sourcedir = "./src"
---    vendordir = "./vendor"
---    outputdir = "%{cfg.buildcfg}_%{cfg.system}_%{cfg.architecture}"
---
---    include "Algorithm2"
 
 newaction
 {

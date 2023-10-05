@@ -15,6 +15,7 @@ workspace "Algorithms"
     include "ConvexHull"
     include "JT_Permutations"
     include "Lexical_Permutation"
+    include "Knapsack_BruteForce_Min_Change"
 
 --workspace "Algorithm2"
 --    architecture "x86_64"

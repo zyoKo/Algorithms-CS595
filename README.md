@@ -3,6 +3,7 @@ List of Algorithms implemented:
   - Convex Hull
   - Johnson-Trotter Permutations
   - Lexicographical Permutation
+  - Knapsack Brute Force (min change) using Gray Codes
 
 ## Usage
 1. Contains `Makefile` to test on Linux or teminal with WSL support.

@@ -1,6 +1,5 @@
 workspace "Algorithms"
     architecture "x86_64"
-    startproject "ConvexHull"
 
     configurations
     {
@@ -24,6 +23,7 @@ workspace "Algorithms"
     include "JT_Permutations"
     include "Lexical_Permutation"
     include "Knapsack_BruteForce_Min_Change"
+    include "TSP_Best_First"
 
 newaction
 {

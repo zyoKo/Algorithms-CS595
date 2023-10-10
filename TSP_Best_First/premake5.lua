@@ -1,0 +1,31 @@
+project "TSP_Best_First"
+    kind "ConsoleApp"
+    language "C++"
+    cppdialect "C++11"
+    staticruntime "on"
+
+    targetdir("./build/bin/" .. outputdir .. "/%{prj.name}")
+    objdir("./build/obj/" .. outputdir .. "/%{prj.name}")
+
+    files 
+    {
+        sourcedir .. "/**.cpp",
+        sourcedir .. "/**.h"
+    }
+
+    includedirs 
+    {
+        sourcedir
+    }
+
+    filter { "configurations:Debug" }
+        buildoptions "/MTd"
+        defines "DEBUG"
+        runtime "Debug"
+        symbols "on"
+
+    filter { "configurations:Release" }
+        buildoptions "/MT"
+        defines "NDEBUG"
+        runtime "Release"
+        optimize "on"

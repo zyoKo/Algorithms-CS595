@@ -90,18 +90,18 @@ void (*pTests[])() = {
 #include <cstdio> // sscanf
 int main(int argc, char ** argv)
 {
-    test0();
-    //test1(); std::cout << "\n";
-    //test2(); std::cout << "\n";
-    //test3(); std::cout << "\n";
-    //test4(); std::cout << "\n";
-    //test5(); std::cout << "\n";
-    //test6(); std::cout << "\n";
-    //test7(); std::cout << "\n";
-    //test8(); std::cout << "\n";
-    //test9(); std::cout << "\n";
-    //test10(); std::cout << "\n";
-    //test11(); std::cout << "\n";
+    //test0(); std::cout << " - test(0)\n";
+    //test1(); std::cout << " - test(1)\n";
+    //test2(); std::cout << " - test(2)\n";
+    //test3(); std::cout << " - test(3)\n";
+    //test4(); std::cout << " - test(4)\n";
+    //test5(); std::cout << " - test(5)\n";
+    test6(); std::cout << " - test(6)\n";
+    //test7(); std::cout << " - test(7)\n";
+    //test8(); std::cout << " - test(8)\n";
+    //test9(); std::cout << " - test(9)\n";
+    //test10(); std::cout << " - test(10)\n";
+    //test11(); std::cout << " - test(11)\n";
 	/*if ( argc == 2 ) {
         int test = 0;
         std::sscanf(argv[1],"%i",&test);

@@ -16,7 +16,7 @@ int main() {
 //    std::cout << std::endl;
 
     bool OK = true;
-    for ( int i=0; i<5000 and OK; ++i ) {
+    for ( int i=0; i<5000 && OK; ++i ) {
         std::random_device rd;
         std::mt19937 g(rd());
         std::shuffle( a, a+n, g );

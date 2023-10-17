@@ -24,6 +24,9 @@ workspace "Algorithms"
     include "Lexical_Permutation"
     include "Knapsack_BruteForce_Min_Change"
     include "TSP_Best_First"
+    include "Emperical_Analysis"
+    include "MergeSort"
+    include "QuickSort"
 
 newaction
 {

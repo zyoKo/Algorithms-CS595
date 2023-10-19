@@ -4,9 +4,10 @@ List of Algorithms implemented:
   - Johnson-Trotter Permutations
   - Lexicographical Permutation
   - Knapsack Brute Force (min change) using Gray Codes
+  - In-Place Merge Sort (Aux Array, O(n))
 
 ## Usage
-1. Contains `Makefile` to test on Linux or teminal with WSL support.
+1. Contains `Makefile` to test on Linux or Windows Teminal with WSL support.
 
 2. Clone the Repository.
 ```

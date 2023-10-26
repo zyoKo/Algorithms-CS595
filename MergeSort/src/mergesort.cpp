@@ -1,59 +1,50 @@
 #include "mergesort.h"
 
-#include <thread>
-
-static int* temp;
-
-void merge(int* arr, unsigned begin, unsigned mid, unsigned end) 
+void merge(int* arr, unsigned start, unsigned mid, unsigned end)
 {
+    int* temp = new int[end - start];
 
-    for (unsigned i = begin; i < end; i++)
+    for (unsigned i = 0; i < mid - start; i++)
+        temp[i] = arr[i + start];
+    for (unsigned j = 0; j < end - mid; j++)
+        temp[mid - start + j] = arr[j + mid];
+
+    unsigned i = 0;
+    unsigned j = 0;
+    unsigned k = start;
+    while (i < mid - start && j < end - mid) 
     {
-        temp[i] = arr[i];
-    }
-
-    // 2 pointer Traversal
-    unsigned ptrL = begin; // [begin, mid)
-    unsigned ptrR = mid;   // [mid, end)
-    unsigned ptr = begin;
-
-    while (ptrL < mid && ptrR < end) 
-    {
-        if (temp[ptrL] <= temp[ptrR]) 
+        if (temp[i] <= temp[mid - start + j])
         {
-            arr[ptr] = temp[ptrL];
-            ++ptrL;
+            arr[k++] = temp[i++];
         }
-        else 
+        else
         {
-            arr[ptr] = temp[ptrR];
-            ++ptrR;
+            arr[k++] = temp[mid - start + j++];
         }
-        ++ptr;
     }
 
-    // copy remaining of L[]
-    // R[] already in correct position
-    while (ptrL < mid) 
+    while (i < mid - start)
     {
-        arr[ptr] = temp[ptrL];
-        ++ptr;
-        ++ptrL;
+        arr[k++] = temp[i++];
+    }
+    while (j < end - mid)
+    {
+        arr[k++] = temp[mid - start + j++];
     }
 
+    delete[] temp;
 }
 
-void mergesort(int* arr, unsigned p, unsigned r)
- {
-    if (r - p < 2)
-        return;
+void mergesort(int* a, unsigned p, unsigned r)
+{
+	if (p + 1 < r)
+	{
+        unsigned m = p + (r - p) / 2;
 
-    temp = new int[r];  // Only allocate once to save time
-
-    const unsigned mid = p + (r - p) / 2;
-    mergesort(arr, p, mid);
-    mergesort(arr, mid, r);
-    merge(arr, p, mid, r);
-    
-    delete[] temp;
+        mergesort(a, p, m);
+        mergesort(a, m, r);
+ 
+        merge(a, p, m, r);
+	}
 }

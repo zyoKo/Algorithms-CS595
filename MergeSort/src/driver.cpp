@@ -3,20 +3,23 @@
 #include <algorithm>//copy, random_shuffle
 #include <iterator> //ostream_iterator
 #include <ctime>    //std::time (NULL) to seed srand
+
 #include "mergesort.h"
 
 
 
-int main() {
+int main()
+{
 	const int n = 1000;
 	int a[n];
 	for ( int i=0; i<n; ++i ) { a[i] = i; }
 	
-//    std::copy(a, a + n, std::ostream_iterator<int>(std::cout, " ")); 
-//    std::cout << std::endl;
+	//std::copy(a, a + n, std::ostream_iterator<int>(std::cout, " ")); 
+	//std::cout << std::endl;
 
     bool OK = true;
-    for ( int i=0; i<5000 and OK; ++i ) {
+    for ( int i=0; i<5000 && OK; ++i ) 
+    {
         std::random_device rd;
         std::mt19937 g(rd());
         std::shuffle( a, a+n, g );

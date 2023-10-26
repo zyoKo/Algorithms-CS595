@@ -19,6 +19,11 @@ workspace "Algorithms"
     vendordir = "./vendor"
     outputdir = "%{cfg.buildcfg}_%{cfg.system}_%{cfg.architecture}"
 
+    defines
+    {
+        "_CRT_SECURE_NO_WARNINGS"
+    }
+
     include "ConvexHull"
     include "JT_Permutations"
     include "Lexical_Permutation"
@@ -27,6 +32,7 @@ workspace "Algorithms"
     include "Emperical_Analysis"
     include "MergeSort"
     include "QuickSort"
+    include "Closest_Pair_DC"
 
 newaction
 {

@@ -33,6 +33,7 @@ workspace "Algorithms"
     include "MergeSort"
     include "QuickSort"
     include "Closest_Pair_DC"
+    include "E_Dijkstra"
 
 newaction
 {

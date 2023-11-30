@@ -34,6 +34,7 @@ workspace "Algorithms"
     include "QuickSort"
     include "Closest_Pair_DC"
     include "E_Dijkstra"
+    include "Dynamic_Knapsack"
 
 newaction
 {

@@ -35,6 +35,7 @@ workspace "Algorithms"
     include "Closest_Pair_DC"
     include "E_Dijkstra"
     include "E_Dijkstra_2"
+    include "Dynamic_Knapsack"
 
 newaction
 {
